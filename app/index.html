@@ -67,6 +67,7 @@
             <li>Submitted by: {{user.name}}</li>
             <li>Created on: {{created_at}}</li>
             <li>Number of comments: {{comments.length}}</li>
+            <li><a href="/#/submissions/{{id}}">View this submission</a></li>
           </ul>
         </div>
       {{/each}}
@@ -80,5 +81,26 @@
         </div>
       {{/each}}
     </script>
+
+    <script type="text/x-handlebars-template" id="submissionTemplate">
+      <div class="submission">
+        <h2><a href={{submission.url}} > {{submission.title}}</a></h2>
+        <ul>
+          <li>Submitted by: {{submissions.user.name}}</li>
+          <li>Created on: {{submission.created_at}}</li>
+          <li>Number of comments: {{submission.comments.length}}</li>
+          {{#each submission.comments}}
+            <div class="comment">
+              <p>{{content}}<br>Posted by: {{user.name}}</p>
+            </div>
+          {{/each}}
+        </ul>
+      </div>
+
+    </script>
   </body>
 </html>
+
+
+
+

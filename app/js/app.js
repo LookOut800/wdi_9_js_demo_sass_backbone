@@ -5,6 +5,7 @@ var Router = Backbone.Router.extend({
   routes: {
     '': 'home',
     'home': 'home',
+    'submissions/:id': 'submissions',
     'comments': 'comments',
     'new-submission': 'newSubmission'
   },
@@ -23,6 +24,23 @@ var Router = Backbone.Router.extend({
       trace(jqXHR, textStatus, errorThrown);
     }).always(function(response){
       trace('always doing something',response);
+    });
+  },
+
+  submissions: function(id){
+    $('#container').empty();
+    $.ajax({
+      url: 'http://jwhacker.herokuapp.com/submissions/' + id,
+      type: 'GET'
+    }).done(function(response){
+      var template = Handlebars.compile($('#submissionTemplate').html());
+      $('#container').html(template({
+        submission: response
+      }));
+    }).fail(function(jqXHR,textStatus,errorThrown){
+      trace(jqXHR, textStatus, errorThrown);
+    }).always(function(response){
+      trace(response);
     });
   },
 
