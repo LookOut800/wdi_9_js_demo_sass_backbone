@@ -16,5 +16,10 @@
   "unused": true,
   "strict": true,
   "trailing": true,
-  "smarttabs": true
+  "smarttabs": true,
+  "globals": {
+    "Backbone": false,
+    "Handlebars": false,
+    "jQuery": false
+  }
 }
