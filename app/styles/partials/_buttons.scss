@@ -7,7 +7,7 @@ button.btn {
   color: $white;
   background-color: $black-30;
   padding: 6px 10px 8px;
-  cursor: pointer; 
+  cursor: pointer;
   border: none;
   &:hover {
     background-color: $black-80;
@@ -18,7 +18,7 @@ button.btn {
     color: $white;
     background-color: $black-30;
     padding: 6px 10px 8px;
-    cursor: pointer; 
+    cursor: pointer;
     &:hover {
       background-color: $black-80;
     }
@@ -29,7 +29,7 @@ button.btn {
     color: $white;
     background-color: $lightblue;
   }
-  &.btn-default { 
+  &.btn-default {
     border: 1px solid $black-80;
     border-radius: 4px;
     color: $black-80;

@@ -1,6 +1,5 @@
 body {
   font-family: $body-font;
-  // @include defaults;
   @extend .container;
   box-sizing: border-box;
 }
@@ -18,17 +17,6 @@ p.lead { font-size: $xlarge-font-size; }
 
 hr.heavy {
   margin: 40px 0;
-}
-
-div.preloader {
-  width: 100%;
-  height: 64px;
-  display: none;
-  &.submitted {
-    display: block;
-    background: url(../images/icons/ajax-loader.gif) no-repeat;
-    background-position: center center;
-  }
 }
 
 section#ajax-preloader {
