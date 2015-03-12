@@ -59,6 +59,50 @@
     <script src="js/app.js" type="text/javascript"></script>
     <!-- endbuild -->
 
+    <script type="text/x-handlbars-template" id="homeTemplate">
+      {{#each submissions}}
+        <div class="submission">
+          <h2><a href="{{url}}" target="_blank">{{title}}</a></h2>
+          <ul>
+            <li>Submitted by: {{user.name}}</li>
+            <li>Created at {{created_at}}</li>
+            <li>Number of comments: {{comments.length}}</li>
+            <li><a href="/#/submissions/{{id}}">View this submission</a></li>
+          </ul>
+        </div>
+      {{/each}}
+    </script>
+
+    <script type="text/x-handlbars-template" id="submissionTemplate">
+      <div class="submission">
+        <h2><a href="{{submission.url}}" target="_blank">{{submission.title}}</a><h2>
+        <ul>
+          <li> Subbed by: {{submission.user.name}} </li>
+          <li> Number of comments: {{submission.comments.length}}</li>
+        </ul>
+        {{#each submission.comments}}
+          <div>
+            <p>{{user.name}} posted:<br>
+              {{content}}
+            </p>
+          </div>
+        {{/each}}
+     </div>
+    </script>
+
+    <script type="text/x-handlbars-template" id="commentsTemplate">
+      <div>
+        <ul>
+        {{#each submissions}}
+        <p>{{user.name}} posted: </p>
+          {{#each comments}}
+          <p>{{content}}</p>
+          {{/each}}
+        {{/each}}
+        </ul>
+      </div>
+    </script>
+
 
   </body>
 </html>

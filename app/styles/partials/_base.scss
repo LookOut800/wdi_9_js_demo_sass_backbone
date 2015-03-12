@@ -1,6 +1,7 @@
 body {
   font-family: $body-font;
-  @extend .container;
+  background: $black-10;
+  @include defaults;
   box-sizing: border-box;
 }
 
@@ -36,3 +37,26 @@ section#ajax-preloader {
     height: 128px;
   }
 }
+/*
+section#container {
+  @extend .container;
+  @extend .clearfix;
+
+  div.submission {
+    @extend .grid_4;
+
+    height: 300px;
+    overflow: hidden;
+
+    h2 {
+      font-size:  $large-font-size;
+      a { color: $white; }
+    }
+    ul {
+      li {}
+      li > a {}
+    }
+  }
+}
+*/
+
